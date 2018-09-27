@@ -4,13 +4,8 @@ module.exports = function makeExchange(currency) {
     let h, q, d, n, p;
     let typeCoins = {};
 
-    if (currency > 10000) {
-        return{error: "You are rich, my friend! We don't have so much coins for exchange"};
-    }
-
-    if (currency <= 0) {
-        return{};
-    }
+    if (currency > 10000) return{error: "You are rich, my friend! We don't have so much coins for exchange"};
+    if (currency <= 0) return{};
     
     while (sumCoins >= 1) {
         switch (true) {
